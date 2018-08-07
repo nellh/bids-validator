@@ -28,7 +28,7 @@
     "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "1.7.x",
-    "gulp-uglify": "^1.1.0",
+    "gulp-uglify": "^3.0.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^2.4.0"
