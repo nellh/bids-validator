@@ -58,20 +58,6 @@ jobs:
       - run: git checkout -f $CIRCLE_TAG
       # Set the version number
       - run: sed -i -E "s/0.0.0/$CIRCLE_TAG/" package.json
-      - run: ./node_modules/.bin/publish
-      # Update gh-pages demo site
-      - run: git config --global user.email circleci@circleci
-      - run: git config --global user.name CircleCI
-      - run: rm -rf node_modules/
-      - run: rm -rf tests/
-      - run: git checkout gh-pages -f
-      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
-      - run: git pull
-      - run: npm install
-      - run: ./node_modules/.bin/gulp build
-      - run: git status
-      - run: git commit dist/ --allow-empty -m "Circle CI - validator demo update"
-      - run: git push origin gh-pages
 
 workflows:
   version: 2
@@ -95,8 +81,3 @@ workflows:
           requires:
             - test
             - githubPagesTest
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /.*/
