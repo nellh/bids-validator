@@ -34,6 +34,7 @@ describe('CLI', () => {
   })
 
   it('should accept a directory as the first argument without error', done => {
+    jest.setTimeout(30000)
     const command = spawn('node', [cli_path, test_data])
     let commandOutput = []
     command.stderr.on('data', data => {
@@ -47,6 +48,7 @@ describe('CLI', () => {
   })
 
   it('should accept an array of options as the second argument without error', done => {
+    jest.setTimeout(30000)
     const command = spawn('node', [cli_path, test_data, '--json'])
     let commandOutput = []
     command.stderr.on('data', data => {
@@ -76,6 +78,7 @@ describe('CLI', () => {
   })
 
   it('with errors should not exit with code 0 with --json argument', done => {
+    jest.setTimeout(30000)
     const command = spawn('node', [cli_path, data_with_errors, '--json'])
     let commandOutput = []
     let output = {}
