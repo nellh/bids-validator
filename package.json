@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js ./bids-validator/**/*.js",
-    "coverage": "./node_modules/.bin/jest --coverage",
+    "coverage": "./node_modules/.bin/jest --coverage --testNamePattern='validates dataset with valid nifti headers'",
     "codecov": "./node_modules/.bin/codecov",
     "test": "bids-validator/bin/test-submodule-exists && jest",
     "npmPublish": "cd bids-validator && publish",
