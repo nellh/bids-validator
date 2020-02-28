@@ -22,6 +22,7 @@ import isNode from '../isNode'
  */
 async function readDir(dir, options = {}) {
   const ig = await getBIDSIgnore(dir)
+  console.log(ig)
   const fileArray = isNode
     ? await preprocessNode(path.resolve(dir), ig, options)
     : preprocessBrowser(dir, ig)
