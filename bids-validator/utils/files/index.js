@@ -11,7 +11,6 @@ import getBFileContent from './getBFileContent'
 import collectDirectorySize from './collectDirectorySize'
 import illegalCharacterTest from './illegalCharacterTest'
 import sessions from './sessions'
-import remoteFiles from './remoteFiles'
 import getFileStats from './getFileStats'
 
 // public API ---------------------------------------------------------------------
@@ -28,6 +27,5 @@ export default {
   collectDirectorySize,
   illegalCharacterTest,
   sessions,
-  remoteFiles,
   getFileStats,
 }
