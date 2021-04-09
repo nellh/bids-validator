@@ -3,11 +3,11 @@
  */
 import { assert } from 'chai'
 
-import validate from '../index.js'
+import validate from '../src/index.js'
 import fs from 'fs'
 import path from 'path'
 import { createFileList } from './env/FileList.js'
-import isNode from '../utils/isNode.js'
+import isNode from '../src/utils/isNode.js'
 
 function getDirectories(srcpath) {
   return fs.readdirSync(srcpath).filter(function(file) {

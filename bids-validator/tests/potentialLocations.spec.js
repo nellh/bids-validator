@@ -1,5 +1,5 @@
 import assert from 'assert'
-import potentialLocations from '../utils/files/potentialLocations'
+import potentialLocations from '../src/utils/files/potentialLocations'
 
 describe('potentialLocations', () => {
   it('should not return duplicate paths', () => {

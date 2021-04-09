@@ -13,7 +13,7 @@ const cli_path = './bids-validator/bin/bids-validator'
 describe('CLI', () => {
   it('should import the cli without issue', function() {
     try {
-      require('../cli')
+      require('../src/cli')
     } catch (e) {
       assert.equal(e, null)
     }

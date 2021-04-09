@@ -1,5 +1,5 @@
 import assert from 'assert'
-import validate from '../index'
+import validate from '../src/index'
 
 describe('JSON', function() {
   var file = {

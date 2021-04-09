@@ -1,9 +1,9 @@
 import assert from 'assert'
-import utils from '../../utils'
-import groupFileTypes from '../../validators/bids/groupFileTypes'
-import checkReadme from '../../validators/bids/checkReadme.js'
-import checkDatasetDescription from '../../validators/bids/checkDatasetDescription.js'
-import validateMisc from '../../utils/files/validateMisc'
+import utils from '../../src/utils'
+import groupFileTypes from '../../src/validators/bids/groupFileTypes'
+import checkReadme from '../../src/validators/bids/checkReadme.js'
+import checkDatasetDescription from '../../src/validators/bids/checkDatasetDescription.js'
+import validateMisc from '../../src/utils/files/validateMisc'
 
 const setupMocks = () => {
   // Mock version of the File API for tests
@@ -111,7 +111,10 @@ describe('validateMisc', () => {
       // *.meg4 and BadChannels files are empty. But only *.meg4 is an issue
       assert.ok(issues.length == 1)
       assert.ok(issues.every(issue => issue instanceof utils.issues.Issue))
-      assert.notStrictEqual(issues.findIndex(issue => issue.code === 99), -1)
+      assert.notStrictEqual(
+        issues.findIndex(issue => issue.code === 99),
+        -1,
+      )
       assert.ok(issues[0].file.name == 'sub-0001_task-AEF_run-01_meg.meg4')
       done()
     })

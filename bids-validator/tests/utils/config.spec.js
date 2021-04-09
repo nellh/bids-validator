@@ -1,4 +1,4 @@
-import utils from '../../utils'
+import utils from '../../src/utils'
 import assert from 'assert'
 
 describe('utils.config', function() {

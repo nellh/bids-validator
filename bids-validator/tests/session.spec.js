@@ -1,5 +1,5 @@
 import assert from 'assert'
-import utils from '../utils'
+import utils from '../src/utils'
 const Subject = utils.files.sessions.Subject
 import {
   session as missingSessionFiles,
@@ -10,7 +10,7 @@ import {
   missingFileWarnings,
   checkFileInMissingSession,
   checkMissingFile,
-} from '../validators/session'
+} from '../src/validators/session'
 const dir = process.cwd()
 const data_dir = dir + '/bids-validator/tests/data/'
 const missing_session_data = data_dir + 'ds006_missing-session'

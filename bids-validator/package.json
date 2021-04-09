@@ -2,7 +2,7 @@
   "name": "bids-validator",
   "version": "1.6.3-dev.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/bids-standard/bids-validator.git"

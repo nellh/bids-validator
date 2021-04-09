@@ -5,11 +5,11 @@
 
 import assert from 'assert'
 
-import utils from '../../../bids-validator/utils'
-import groupFileTypes from '../../../bids-validator/validators/bids/groupFileTypes'
-import checkReadme from '../../../bids-validator/validators/bids/checkReadme.js'
-import checkDatasetDescription from '../../../bids-validator/validators/bids/checkDatasetDescription.js'
-import validateMisc from '../../../bids-validator/utils/files/validateMisc'
+import utils from '../../src/utils'
+import groupFileTypes from '../../src/validators/bids/groupFileTypes'
+import checkReadme from '../../src/validators/bids/checkReadme.js'
+import checkDatasetDescription from '../../src/validators/bids/checkDatasetDescription.js'
+import validateMisc from '../../src/utils/files/validateMisc'
 import { createFileList } from '../env/FileList'
 
 describe('files in browser', () => {
@@ -77,7 +77,10 @@ describe('files in browser', () => {
         // *.meg4 and BadChannels files are empty. But only *.meg4 is an issue
         assert.ok(issues.length == 1)
         assert.ok(issues.every(issue => issue instanceof utils.issues.Issue))
-        assert.notStrictEqual(issues.findIndex(issue => issue.code === 99), -1)
+        assert.notStrictEqual(
+          issues.findIndex(issue => issue.code === 99),
+          -1,
+        )
         assert.ok(issues[0].file.name == 'sub-0001_task-AEF_run-01_meg.meg4')
         done()
       })

@@ -1,6 +1,6 @@
 import { assert } from 'chai'
-import utils from '../utils'
-import BIDS from '../validators/bids'
+import utils from '../src/utils'
+import BIDS from '../src/validators/bids'
 
 describe('utils.type.file.isAnat', function() {
   const goodFilenames = [

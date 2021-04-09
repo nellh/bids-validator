@@ -1,5 +1,5 @@
 import assert from 'assert'
-import validate from '../index'
+import validate from '../src/index'
 
 describe('TSV', function() {
   // general tsv checks ------------------------------------------------------------------
