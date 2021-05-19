@@ -1,6 +1,6 @@
 {
   "name": "@squishymedia/bids-validator",
-  "version": "1.7.1-15",
+  "version": "1.7.2-3",
   "description": "",
   "main": "./dist/commonjs/index.js",
   "exports": {
