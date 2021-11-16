@@ -38,6 +38,7 @@ export function cli(argumentOverride) {
     process.title = 'bids-validator'
     const argv = parseOptions(argumentOverride)
     const dir = argv._[0]
+    console.log(argv, dir)
     const options = argv
     process.on('unhandledRejection', (err) => {
       console.log(
