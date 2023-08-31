@@ -22,8 +22,16 @@ const associationLookup = {
   events: {
     extensions: ['.tsv'],
     inherit: true,
-    load: (file: BIDSFile): Promise<ContextAssociations['events']> => {
-      return file.text().then((text) => parseTSV(text))
+    load: (file: BIDSFile): Promise<ContextAssociations["events"]> => {
+      return Promise.resolve(
+        file.text().then((text) => parseTSV(text)).then((columns) => {
+          return {
+            path: file.path,
+            n_rows: columns.get("onset")?.length || 0,
+            onset: columns.get("onset") || [],
+          };
+        }),
+      );
     },
   },
   aslcontext: {
