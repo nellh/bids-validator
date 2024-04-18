@@ -1,6 +1,6 @@
 import { BIDSFile } from '../types/file.ts'
-import { default as ignore } from 'npm:ignore@5.2.4'
-import type { Ignore } from 'npm:ignore@5.2.4'
+import { default as ignore } from 'https://esm.sh/ignore@5.3.1'
+import type { Ignore } from 'https://esm.sh/ignore@5.3.1'
 
 export async function readBidsIgnore(file: BIDSFile) {
   const value = await file.text()
